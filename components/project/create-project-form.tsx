@@ -153,8 +153,8 @@ export const CreateProjectForm = ({ workspaceMembers }: Props) => {
                                   } else {
                                     field.onChange(
                                       currentValue.filter(
-                                        (id) => id !== member.userId
-                                      )
+                                        (id) => id !== member.userId,
+                                      ),
                                     );
                                   }
                                 }}

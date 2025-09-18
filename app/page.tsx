@@ -31,7 +31,7 @@ export default async function Home() {
             {isLoggedIn ? (
               <>
                 <Button asChild>
-                  <Link href="/workspace">Goto Workspace</Link>
+                  <Link href="/workspace">Go to Workspace</Link>
                 </Button>
               </>
             ) : (

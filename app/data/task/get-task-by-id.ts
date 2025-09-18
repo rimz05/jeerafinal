@@ -4,7 +4,7 @@ import { userRequired } from "../user/is-user-authenticated";
 export const getTaskById = async (
   taskId: string,
   workspaceId: string,
-  projectId: string
+  projectId: string,
 ) => {
   const { user } = await userRequired();
 
@@ -65,7 +65,7 @@ export const getTaskById = async (
   const project = {
     ...task?.project,
     members: task?.project.projectAccess.map(
-      (access) => access.workspaceMember
+      (access) => access.workspaceMember,
     ),
   };
 

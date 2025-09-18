@@ -30,7 +30,7 @@ export const WorkspaceSelector = ({
       workspaces.find((workspace) => workspace.workspaceId === id)
     );
 
-    router.push(`/workspace/${id}`);
+    router.redirect(`/workspace/${id}`);
   };
 
   useEffect(() => {

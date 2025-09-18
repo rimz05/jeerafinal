@@ -116,6 +116,7 @@ export const OnboardingForm = ({ name, email, image }: Props) => {
                           <SelectItem key={country.code} value={country.name}>
                             <div className="flex flex-row items-center">
                               <img
+                                loading="lazy"
                                 src={country.flag}
                                 alt={country.name}
                                 className="w-4 h-3"

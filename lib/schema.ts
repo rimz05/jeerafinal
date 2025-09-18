@@ -51,7 +51,7 @@ export const taskFormSchema = z.object({
         name: z.string(),
         url: z.string(),
         type: z.enum(["IMAGE", "PDF"]),
-      })
+      }),
     )
     .optional(),
 });

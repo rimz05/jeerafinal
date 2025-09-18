@@ -9,7 +9,7 @@ import { TaskStatus } from "@prisma/client";
 export const createNewTask = async (
   data: TaskFormValues,
   projectId: string,
-  workspaceId: string
+  workspaceId: string,
 ) => {
   const { user } = await userRequired();
 
@@ -79,7 +79,7 @@ export const createNewTask = async (
 export const updateTaskPosition = async (
   taskId: string,
   newPosition: number,
-  status: TaskStatus
+  status: TaskStatus,
 ) => {
   await userRequired();
 
@@ -95,7 +95,7 @@ export const updateTask = async (
   taskId: string,
   data: TaskFormValues,
   projectId: string,
-  workspaceId: string
+  workspaceId: string,
 ) => {
   const { user } = await userRequired();
 

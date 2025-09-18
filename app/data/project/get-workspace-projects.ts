@@ -3,7 +3,7 @@ import { userRequired } from "../user/is-user-authenticated";
 import { $Enums, AccessLevel, Prisma } from "@prisma/client";
 
 export const getWorkspaceProjectsByWorkspaceId = async (
-  workspaceId: string
+  workspaceId: string,
 ) => {
   try {
     const { user } = await userRequired();

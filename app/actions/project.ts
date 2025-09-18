@@ -24,7 +24,7 @@ export const createNewProject = async (data: ProjectDataTye) => {
   });
 
   const isUserMember = workspaceMembers.some(
-    (member) => member.userId === user.id
+    (member) => member.userId === user.id,
   );
 
   if (!isUserMember) {
@@ -45,7 +45,7 @@ export const createNewProject = async (data: ProjectDataTye) => {
       projectAccess: {
         create: validatedData.memberAccess?.map((userId) => ({
           workspaceMemberId: workspaceMembers.find(
-            (member) => member.userId === userId
+            (member) => member.userId === userId,
           )?.id!,
           hasAccess: true,
         })),
@@ -66,7 +66,7 @@ export const createNewProject = async (data: ProjectDataTye) => {
 export const postComment = async (
   workspaceId: string,
   projectId: string,
-  content: string
+  content: string,
 ) => {
   const { user } = await userRequired();
 

@@ -2,7 +2,7 @@ export function getCountryFlagEmoji(location: string): string {
   const cleanLocation = location.trim().toLowerCase();
 
   const country = countryList.find((country) =>
-    cleanLocation.includes(country.name.toLowerCase())
+    cleanLocation.includes(country.name.toLowerCase()),
   );
 
   return country?.flagEmoji || "";

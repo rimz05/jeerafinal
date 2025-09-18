@@ -6,7 +6,9 @@ export const userRequired = async () => {
 
   const isUserAuthenticated = await isAuthenticated();
 
-  if (!isUserAuthenticated) redirect("/api/auth/login");
+  if (!isUserAuthenticated) {
+    redirect("/api/auth/login");
+  }
 
   const user = await getUser();
 

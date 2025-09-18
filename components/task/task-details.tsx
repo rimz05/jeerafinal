@@ -84,7 +84,8 @@ export const TaskDetails = ({ task }: TaskProps) => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {task?.attachments?.map((file) => (
               <div key={file.id} className="relative group cursor-pointer">
-                <Image
+                <img
+                  loading="lazy"
                   src={file.type === "PDF" ? "/pdf.png" : file.url}
                   alt={"attachment "}
                   width={80}

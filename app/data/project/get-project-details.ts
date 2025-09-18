@@ -4,7 +4,7 @@ import { TaskStatus } from "@prisma/client";
 
 export const getProjectDetails = async (
   workspaceId: string,
-  projectId: string
+  projectId: string,
 ) => {
   try {
     const { user } = await userRequired();
@@ -76,16 +76,16 @@ export const getProjectDetails = async (
     const tasks = {
       total: project?.tasks.length,
       completed: project?.tasks.filter(
-        (task) => task.status === TaskStatus.COMPLETED
+        (task) => task.status === TaskStatus.COMPLETED,
       ).length,
       inProgress: project?.tasks.filter(
-        (task) => task.status === TaskStatus.IN_PROGRESS
+        (task) => task.status === TaskStatus.IN_PROGRESS,
       ).length,
       overdue: project?.tasks.filter(
         (task) =>
           task.status !== TaskStatus.COMPLETED &&
           task.dueDate &&
-          new Date(task.dueDate) < new Date()
+          new Date(task.dueDate) < new Date(),
       ).length,
       items: project?.tasks,
     };
@@ -94,7 +94,7 @@ export const getProjectDetails = async (
       project: {
         ...project,
         members: project?.projectAccess?.map(
-          (access) => access.workspaceMember
+          (access) => access.workspaceMember,
         ),
       },
       tasks,

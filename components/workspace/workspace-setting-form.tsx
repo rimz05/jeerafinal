@@ -74,7 +74,7 @@ export const WorkspaceSettingsForm = ({ data }: { data: DataProps }) => {
         toast.error(
           error instanceof Error
             ? error.message
-            : "Something went wrong. Please try again."
+            : "Something went wrong. Please try again.",
         );
       }
     } finally {
@@ -105,7 +105,7 @@ export const WorkspaceSettingsForm = ({ data }: { data: DataProps }) => {
         toast.error(
           error instanceof Error
             ? error.message
-            : "Something went wrong. Please try again."
+            : "Something went wrong. Please try again.",
         );
       }
     } finally {
@@ -131,7 +131,7 @@ export const WorkspaceSettingsForm = ({ data }: { data: DataProps }) => {
             toast.error(
               error instanceof Error
                 ? error.message
-                : "Something went wrong. Please try again."
+                : "Something went wrong. Please try again.",
             );
           }
         } finally {

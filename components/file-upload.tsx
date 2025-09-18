@@ -28,11 +28,11 @@ export const FileUpload = ({ value, onChange }: FileUploaderProps) => {
               key={file?.url}
               className="relative w-[200px] h-[200px] rounded-lg"
             >
-              <Image
+              <img
+                loading="lazy"
                 src={file.type === "IMAGE" ? file.url : "/pdf.png"}
                 alt={file.name}
                 className="object-cover rounded-lg"
-                fill
               />
 
               <button

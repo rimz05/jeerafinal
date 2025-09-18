@@ -52,7 +52,7 @@ export const CreateWorkspaceForm = () => {
 
       toast.success("Workspace created successfully");
 
-      router.push(`/workspace/${res?.id as string}`);
+      router.redirect(`/workspace/${res?.id as string}`);
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong. Try again");

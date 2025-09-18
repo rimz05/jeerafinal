@@ -21,7 +21,7 @@ export const ProfileAvatar = ({
         size === "sm" && "h-6 w-6",
         size === "md" && "h-8 w-8",
         size === "lg" && "h-10 w-10",
-        className
+        className,
       )}
     >
       <AvatarImage src={url || undefined} alt={name} />

@@ -46,7 +46,7 @@ export const ProjectKanban = ({
         tasks: initialTasks
           .filter((task) => task.status === status)
           .sort((a, b) => a.position - b.position),
-      })
+      }),
     );
 
     setColumns(initialColumns);
@@ -61,10 +61,10 @@ export const ProjectKanban = ({
       const newColumns = [...columns];
 
       const sourceColumn = newColumns.find(
-        (col) => col.id === source.droppableId
+        (col) => col.id === source.droppableId,
       );
       const destColumn = newColumns.find(
-        (col) => col.id === destination.droppableId
+        (col) => col.id === destination.droppableId,
       );
 
       if (!sourceColumn || !destColumn) return;
@@ -103,7 +103,7 @@ export const ProjectKanban = ({
         await updateTaskPosition(
           movedTask.id,
           newPosition,
-          destination.droppableId as TaskStatus
+          destination.droppableId as TaskStatus,
         );
 
         router.refresh();
@@ -111,7 +111,7 @@ export const ProjectKanban = ({
         console.log(error);
       }
     },
-    [columns]
+    [columns],
   );
 
   return (
