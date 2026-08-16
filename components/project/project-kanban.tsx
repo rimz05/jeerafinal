@@ -32,9 +32,6 @@ export const ProjectKanban = ({
   initialTasks: ProjectTaskProps[];
 }) => {
   const router = useRouter();
-
-  if (initialTasks.length === 0) return null;
-
   const [columns, setColumns] = useState<Column[]>([]);
 
   useEffect(() => {
@@ -113,8 +110,10 @@ export const ProjectKanban = ({
     [columns]
   );
 
+  if (initialTasks.length === 0) return null;
+
   return (
-    <div className="flex overflow-x-scroll gap-10 h-165">
+    <div className="flex overflow-x-auto gap-10 min-h-[600px]">
       <DragDropContext onDragEnd={onDragEnd}>
         {columns.map((column) => (
           <div

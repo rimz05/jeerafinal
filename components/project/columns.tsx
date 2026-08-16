@@ -1,4 +1,4 @@
-import { Project } from "@prisma/client";
+import { File, Task } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
@@ -15,16 +15,10 @@ import {
 } from "../ui/dropdown-menu";
 import { ProfileAvatar } from "../profileAvatar";
 
-export type TaskTableItem = {
-  id: string;
-  name: string;
-  status: string;
-  dueDate: Date;
-  assignedTo: {
-    name: string;
-    image?: string;
-  };
-  project: Project;
+export type TaskTableItem = Task & {
+  assignedTo: { id: string; name: string; email: string; image: string | null } | null;
+  project: { id: string; name: string; workspaceId: string };
+  attachments: File[];
 };
 
 export const columns: ColumnDef<TaskTableItem>[] = [
@@ -84,7 +78,7 @@ export const columns: ColumnDef<TaskTableItem>[] = [
     cell: ({ row }) => {
       const status = row.getValue("status") as string;
       return (
-        <Badge variant={status as any}>
+        <Badge variant={status as React.ComponentProps<typeof Badge>["variant"]}>
           {status === "IN_PROGRESS" ? "IN PROGRESS" : status}
         </Badge>
       );
@@ -252,7 +246,7 @@ export const myTaskColumns: ColumnDef<TaskTableItem>[] = [
     cell: ({ row }) => {
       const status = row.getValue("status") as string;
       return (
-        <Badge variant={status as any}>
+        <Badge variant={status as React.ComponentProps<typeof Badge>["variant"]}>
           {status === "IN_PROGRESS" ? "IN PROGRESS" : status}
         </Badge>
       );

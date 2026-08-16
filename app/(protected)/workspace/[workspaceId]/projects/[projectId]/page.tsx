@@ -85,11 +85,11 @@ const ProjectPage = async (props: ProjectPageProps) => {
         </TabsContent>
 
         <TabsContent value="gantt-chart">
-          <GanttChart/>
+          <GanttChart tasks={(tasks?.items as unknown as ProjectTaskProps[]) ?? []}/>
         </TabsContent>
 
         <TabsContent value="calender">
-          <ProjectCalender/>
+          <ProjectCalender tasks={(tasks?.items as unknown as ProjectTaskProps[]) ?? []}/>
         </TabsContent>
       </Tabs>
     </div>

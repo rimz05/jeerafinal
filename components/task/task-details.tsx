@@ -8,10 +8,7 @@ import { Badge } from "../ui/badge";
 import { format } from "date-fns";
 import Image from "next/image";
 import { EditTaskDialog } from "./edit-task-dialog";
-
-interface ProjectProps {
-  name: string;
-}
+import { ProjectProps } from "@/utils/types";
 
 interface TaskProps {
   task: Task & {
@@ -99,7 +96,7 @@ const TaskDetails = ({ task }: TaskProps) => {
                     width={80}
                     height={120}
                     className="w-full h-48 object-contain rounded-lg"/>
-                    <div className="abosule inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
                       <a href={file.url} target="_blank" rel="noopener noreferrer">
                         <span className="text-white text-sm">
                           View

@@ -13,7 +13,7 @@ export const WorkspaceShell = ({
   const { open } = useSidebar();
 
   return (
-    <div className="min-h-screen w-screen bg-purple-900 flex justify-center items-center md:p-3 overflow-hidden">
+    <div className="min-h-screen w-screen bg-blue-900 flex justify-center items-center md:p-3 overflow-auto">
 
       {/* Sidebar */}
       <div
@@ -28,7 +28,7 @@ export const WorkspaceShell = ({
       {/* Main */}
       <main
         className={cn(
-          "h-full bg-[#fafbff] rounded-4xl shadow-2xl shadow-accent-foreground transition-all duration-300 ease-in-out",
+          "h-full bg-background rounded-4xl shadow-2xl shadow-accent-foreground/20 transition-all duration-300 ease-in-out",
           open ? "w-[85%]" : "w-[95%]"
         )}
       >

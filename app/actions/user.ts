@@ -1,6 +1,6 @@
 "use server";
 
-import { UserDataType } from "@/components/onboardinf-form";
+import { UserDataType } from "@/components/onboarding-form";
 import { userRequired } from "../data/user/is-user-authenticated";
 import { userSchema } from "@/lib/schema";
 import { db } from "@/lib/db";

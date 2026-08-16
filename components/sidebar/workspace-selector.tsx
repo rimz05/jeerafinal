@@ -69,9 +69,9 @@ export const WorkspaceSelector = ({
               {workspaces?.map((workspace) => (
                 <DropdownMenuItem
                   key={workspace.id}
-                  onSelect={() => onWorkspaceSelect(workspace?.workspaceId!)}
+                  onSelect={() => onWorkspaceSelect(workspace.workspaceId)}
                 >
-                  <div className="flex flex-row items-center gap-2 text-white">
+                  <div className="flex flex-row items-center gap-2">
                     <WorkspaceAvatar
                       name={workspace?.workspace.name as string}
                     />

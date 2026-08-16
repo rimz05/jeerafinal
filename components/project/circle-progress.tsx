@@ -18,10 +18,10 @@ const variantStyles = {
 };
 
 const ringStyles = {
-  success: "bg-emerald-100",
-  default: "bg-blue-100",
-  warning: "bg-red-100",
-  inProgress: "bg-amber-100",
+  success: "bg-emerald-100 dark:bg-emerald-900/40",
+  default: "bg-blue-100 dark:bg-blue-900/40",
+  warning: "bg-red-100 dark:bg-red-900/40",
+  inProgress: "bg-amber-100 dark:bg-amber-900/40",
 };
 
 export const CircleProgress = ({
@@ -35,10 +35,10 @@ export const CircleProgress = ({
 
       {/* Left content */}
       <div className="flex flex-col gap-1">
-        <h3 className="text-sm font-semibold text-gray-800">
+        <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100">
           {title}
         </h3>
-        <p className="text-xs text-gray-500 leading-snug max-w-[140px]">
+        <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug max-w-[140px]">
           {subTitle}
         </p>
       </div>

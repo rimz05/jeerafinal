@@ -37,7 +37,7 @@ export const ProjectDashboard = ({
       <ProjectHeader project={project as unknown as ProjectProps} />
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3'>
-        <Card className='p-4  bg-[#EBFDEF]'>
+        <Card className='p-4 bg-emerald-50 dark:bg-emerald-950/30'>
           <CircleProgress
             title="Task Completed"
             value={(tasks.completed / tasks.total) * 100}
@@ -45,7 +45,7 @@ export const ProjectDashboard = ({
             variant="success"
           />
         </Card>
-        <Card className='p-4 bg-[#E4F5FF]'>
+        <Card className='p-4 bg-sky-50 dark:bg-sky-950/30'>
           <CircleProgress
             title="In Progress "
             value={(tasks.inProgress / tasks.total) * 100}
@@ -53,7 +53,7 @@ export const ProjectDashboard = ({
             variant="inProgress"
           />
         </Card>
-        <Card className='p-4 bg-[#FFEFE7]'>
+        <Card className='p-4 bg-orange-50 dark:bg-orange-950/30'>
           <CircleProgress
             title="Overdue"
             value={(tasks.overdue / tasks.total) * 100}
@@ -61,7 +61,7 @@ export const ProjectDashboard = ({
             variant="warning"
           />
         </Card>
-        <Card className='p-4 bg-[#F1E7FF]'>
+        <Card className='p-4 bg-purple-50 dark:bg-purple-950/30'>
           <CircleProgress
             title="Team Members"
             value={project.members.length}

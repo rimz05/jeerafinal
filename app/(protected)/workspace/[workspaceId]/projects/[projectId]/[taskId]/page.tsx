@@ -25,10 +25,12 @@ const TaskIdPage = async ({ params }: PageProps) => {
   return (
     <div className="flex flex-col lg:flex-row gap-6 md:px-6 pb-6">
       <div className="flex-1">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         <TaskDetails task={task as any} />
       </div>
 
       <div className="w-full lg:w-[400px]">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         <TaskComment taskId={taskId} comments={comments as any} />
       </div>
     </div>

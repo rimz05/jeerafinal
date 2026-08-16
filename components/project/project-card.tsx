@@ -17,10 +17,10 @@ interface DataProps {
 }
 
 const priorityStyles: Record<TaskPriority, string> = {
-  LOW: "bg-emerald-100 text-emerald-900",
-  MEDIUM: "bg-yellow-100 text-yellow-900",
-  HIGH: "bg-orange-100 text-orange-900",
-  CRITICAL: "bg-red-100 text-red-900",
+  LOW: "bg-emerald-100 text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-300",
+  MEDIUM: "bg-yellow-100 text-yellow-900 dark:bg-yellow-900/30 dark:text-yellow-300",
+  HIGH: "bg-orange-100 text-orange-900 dark:bg-orange-900/30 dark:text-orange-300",
+  CRITICAL: "bg-red-100 text-red-900 dark:bg-red-900/30 dark:text-red-300",
 };
 
 export const ProjectCard = ({ provided, task }: DataProps) => {
@@ -32,7 +32,7 @@ export const ProjectCard = ({ provided, task }: DataProps) => {
       ref={provided.innerRef}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
-      className="mb-3 p-0 overflow-hidden rounded-xl border border-border/40 bg-white shadow-sm hover:shadow-md transition-all"
+      className="mb-3 p-0 overflow-hidden rounded-xl border border-border/40 bg-card shadow-sm hover:shadow-md transition-all"
     >
       {/* Priority strip */}
       <div
@@ -46,7 +46,7 @@ export const ProjectCard = ({ provided, task }: DataProps) => {
         </div>
 
       {/* Content */}
-      <div className="mb-1 rounded-xl bg-white mt-1 border-1 border-gray-300">
+      <div className="mb-1 rounded-xl bg-card mt-1 border border-border/40">
         <Link
           href={`/workspace/${workspaceId}/projects/${projectId}/${task.id}`}
           className="block px-4 py-3 space-y-2"
@@ -55,18 +55,18 @@ export const ProjectCard = ({ provided, task }: DataProps) => {
             {task.project.name.slice(0, 2).toUpperCase()}
           </span>
 
-          <h3 className="text-lg font-semibold leading-tight text-black">
+          <h3 className="text-lg font-semibold leading-tight text-foreground">
             {task.title}
           </h3>
 
           {task.description && (
-            <p className="text-xsm text-gray-500 ">
+            <p className="text-xs text-muted-foreground">
               {task.description}
             </p>
           )}
 
           <div className="flex items-center justify-between pt-2">
-            <div className="flex items-center gap-3 text-xs text-gray-700">
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <div className="flex items-center gap-1">💬 <span>10</span></div>
               <div className="flex items-center gap-1">📎 <span>4</span></div>
             </div>

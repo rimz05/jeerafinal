@@ -35,7 +35,7 @@ export const AppSidebar = ({
             <AvatarImage src={"/wrench.svg"} />
           </Avatar>
           <SidebarGroupLabel>
-            <span className="text-xl font-bold ">HiiTeam</span>
+            <span className="text-xl font-bold ">Sprinto</span>
           </SidebarGroupLabel>
         </div>
 
